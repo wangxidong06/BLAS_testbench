@@ -1,2 +1,6 @@
-# optimized-BLAS-for-ARMv8
-Numerical computing optimization for ARMv8
+# BLAS-testbench
+A testbench of Basic Linear Algebra Subprograms.
+
+## Construction
+- HPL
+- single_operator_test
