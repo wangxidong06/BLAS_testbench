@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------
+[[60477,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: my-kunpeng
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+================================================================================
+HPLinpack 2.3  --  High-Performance Linpack benchmark  --   December 2, 2018
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      :     500 
+NB     :      40       60       80      100 
+PMAP   : Row-major process mapping
+P      :       2 
+Q      :       2 
+PFACT  :   Right 
+NBMIN  :       2 
+NDIV   :       2 
+RFACT  :   Crout 
+BCAST  :   1ring 
+DEPTH  :       0 
+SWAP   : Mix (threshold = 64)
+L1     : transposed form
+U      : transposed form
+EQUIL  : yes
+ALIGN  : 8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00C2R2         500    40     2     2               2.21             3.7913e-02
+HPL_pdgesv() start time Sat Apr 15 20:11:26 2023
+
+HPL_pdgesv() end time   Sat Apr 15 20:11:28 2023
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   6.55732915e-03 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00C2R2         500    60     2     2               1.49             5.6334e-02
+HPL_pdgesv() start time Sat Apr 15 20:11:28 2023
+
+HPL_pdgesv() end time   Sat Apr 15 20:11:30 2023
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   8.65943945e-03 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00C2R2         500    80     2     2               1.16             7.2344e-02
+HPL_pdgesv() start time Sat Apr 15 20:11:30 2023
+
+HPL_pdgesv() end time   Sat Apr 15 20:11:31 2023
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   8.47119077e-03 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00C2R2         500   100     2     2               0.92             9.0787e-02
+HPL_pdgesv() start time Sat Apr 15 20:11:31 2023
+
+HPL_pdgesv() end time   Sat Apr 15 20:11:32 2023
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   7.02795086e-03 ...... PASSED
+================================================================================
+
+Finished      4 tests with the following results:
+              4 tests completed and passed residual checks,
+              0 tests completed and failed residual checks,
+              0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================
